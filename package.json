@@ -2,9 +2,9 @@
   "engines": {
     "composer": "^0.19.10"
   },
-  "name": "carauction-network",
-  "version": "1.0.0",
-  "description": "for study",
+  "name": "market-network",
+  "version": "0.0.1",
+  "description": "for blockchain team study",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/carauction.bna",
     "pretest": "npm run lint",
