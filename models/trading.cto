@@ -28,14 +28,14 @@ abstract participant User identified by userId {
  * / 商人
  */
 participant Trader extends User {
-  o String company
+  o String company optional
 }
 
 /**
  * 农场主
  */
 participant Farmer extends User {
-  o String location
+  o String location optional
 }
 
 asset Contract identified by contractId {
