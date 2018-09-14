@@ -13,7 +13,116 @@
  */
 
 /**
- * Write your model definitions here
+ * 某交易系统
+ * 参与者：
+ *      农场主
+ *      商人
+ *      物流公司
  */
-
+/**
+ * My commodity trading network
+ */
 namespace org.example.mynetwork
+
+abstract participant User identified by userId {
+  o String userId
+  o String firstName
+  o String lastName
+  o Double accountBalance
+  --> Contact contacter
+}
+
+abstract participant Contact identified by contactId {
+  o String contactId
+  o String mailaddr
+  o String fax
+  o String phone
+  o String address
+}
+
+/**
+ * / 商人
+ */
+participant Trader extends User {
+  o String company optional
+}
+
+/**
+ * 农场主
+ */
+participant Farmer extends User {
+  o String location optional
+}
+
+/**
+ * 物流公司
+ */
+participant express extends User {
+  o String company optional
+}
+
+asset Contract identified by contractId {
+  o String contractId
+  --> Farmer farmer
+  --> Trader trader
+  o DateTime arrivalDateTime
+  o Double unitPrice
+  --> Vegetables[] goods
+}
+
+/**
+ * A shipment being tracked as an asset on the ledger
+ */
+asset Shipment identified by shipmentId {
+  o String shipmentId
+  o VegetablesType type
+  o Long unitCount
+  --> Contract contract
+}
+
+/**
+ * An abstract transaction that is related to a Shipment
+ */
+abstract transaction ShipmentTransaction {
+  --> Shipment shipment
+}
+
+/**
+ * 交易
+ */
+transaction Trade extends ShipmentTransaction {
+
+}
+
+/**
+ * The types of transfer status
+ */
+enum TransferType {
+  o JOURNEY
+  o ARRIVED
+}
+
+/**
+ * The types of Vegetables
+ */
+enum VegetablesType {
+  o CABBAGE
+  o RADISH
+  o ONION
+  o OTHER
+}
+
+/**
+ * An Vegetables asset
+ */
+asset Vegetables identified by vegetablesId {
+    o String vegetablesId
+    o VegetablesType species
+    o Double amount
+}
+
+/**
+ * JUST FOR INITIALIZING A DEMO
+ */
+transaction SetupDemo {
+}
