@@ -95,9 +95,9 @@ transaction Trade extends ShipmentTransaction {
 }
 
 /**
- * The types of transfer status
+ * The types of transit status
  */
-enum TransferType {
+enum TransitType {
   o JOURNEY
   o ARRIVED
 }
