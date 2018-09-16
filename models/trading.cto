@@ -29,6 +29,9 @@ abstract participant User identified by userId {
  */
 participant Trader extends User {
   o String company optional
+  o String post
+  o String telnum
+  o String fax
 }
 
 /**
@@ -36,6 +39,16 @@ participant Trader extends User {
  */
 participant Farmer extends User {
   o String location optional
+  o String post
+  o String teleNum
+  o String fax
+}
+
+/**
+ * 物流公司
+ */
+participant DistributionCompany identified by name {
+  o String name
 }
 
 asset Contract identified by contractId {
@@ -44,6 +57,7 @@ asset Contract identified by contractId {
   --> Trader trader
   o DateTime arrivalDateTime
   o Double unitPrice
+  o Double amount
 }
 
 /**
@@ -51,9 +65,11 @@ asset Contract identified by contractId {
  */
 asset Shipment identified by shipmentId {
   o String shipmentId
+  --> DistributionCompany distributionCompany
   o VegetablesType type
   o Long unitCount
   --> Contract contract
+  o ShipmentStatus status
 }
 
 /**
@@ -70,8 +86,6 @@ transaction Trade extends ShipmentTransaction {
 
 }
 
-
-
 /**
  * The types of Vegetables
  */
@@ -80,6 +94,14 @@ enum VegetablesType {
   o RADISH
   o ONION
   o OTHER
+}
+
+/**
+ * The status of shipment
+ */
+enum ShipmentStatus {
+  o MIDWAY
+  o ARRIVED
 }
 
 /**
@@ -95,4 +117,16 @@ asset Vegetables identified by vegetablesId {
  * JUST FOR INITIALIZING A DEMO
  */
 transaction SetupDemo {
+}
+
+/**
+ * Query Info of Contract
+ */
+transaction QueryContract {
+}
+
+/**
+ * Query Info of Shipment
+ */
+transaction QueryShipment {
 }
