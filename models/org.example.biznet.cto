@@ -67,7 +67,6 @@ asset Contract identified by contractId {
   --> Trader trader
   o DateTime arrivalDateTime
   o Double unitPrice
-  --> Vegetables[] goods
 }
 
 /**
@@ -77,7 +76,7 @@ asset Shipment identified by shipmentId {
   o String shipmentId
   o VegetablesType type
   o Long unitCount
-  --> Contract contract optional
+  --> Contract contract
 }
 
 /**
