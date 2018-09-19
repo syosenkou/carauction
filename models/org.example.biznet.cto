@@ -77,7 +77,7 @@ asset Shipment identified by shipmentId {
   o String shipmentId
   o VegetablesType type
   o Long unitCount
-  --> Contract contract
+  --> Contract contract optional
 }
 
 /**
