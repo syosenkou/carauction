@@ -1,10 +1,10 @@
-query selectContract {
+query selectContracts {
   description: "Select all Contracts"
   statement:
       SELECT org1.trading.Contract
 }
 
-query selectShipment {
+query selectShipments {
   description: "Select all shipments"
   statement:
       SELECT org1.trading.Shipment
