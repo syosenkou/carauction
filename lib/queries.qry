@@ -1,0 +1,25 @@
+query selectContract {
+  description: "Select all Contracts"
+  statement:
+      SELECT org1.trading.Contract
+}
+
+query selectShipment {
+  description: "Select all shipments"
+  statement:
+      SELECT org1.trading.Shipment
+}
+
+query selectContractById {
+  description: "Select contract by contract ID"
+  statement:
+      SELECT org1.trading.Contract
+        WHERE (contractId == _$contractId )
+}
+
+query selectShipmentById {
+  description: "Select shipment by shipment ID"
+  statement:
+      SELECT org1.trading.Shipment
+        WHERE (shipmentId == _$shipmentId)
+}

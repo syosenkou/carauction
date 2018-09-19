@@ -118,15 +118,3 @@ asset Vegetables identified by vegetablesId {
  */
 transaction SetupDemo {
 }
-
-/**
- * Query Info of Contract
- */
-transaction QueryContract {
-}
-
-/**
- * Query Info of Shipment
- */
-transaction QueryShipment {
-}
