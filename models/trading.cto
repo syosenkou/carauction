@@ -29,9 +29,9 @@ abstract participant User identified by userId {
  */
 participant Trader extends User {
   o String company optional
-  o String post
-  o String telnum
-  o String fax
+  o String post optional
+  o String telnum optional
+  o String fax optional
 }
 
 /**
@@ -39,9 +39,9 @@ participant Trader extends User {
  */
 participant Farmer extends User {
   o String location optional
-  o String post
-  o String teleNum
-  o String fax
+  o String post optional
+  o String teleNum optional
+  o String fax optional
 }
 
 /**
