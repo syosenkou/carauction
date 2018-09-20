@@ -2,7 +2,7 @@
   "engines": {
     "composer": "^0.19.10"
   },
-  "name": "market-network",
+  "name": "market-network-dx",
   "version": "0.0.2",
   "description": "for blockchain team study",
   "scripts": {
