@@ -105,7 +105,7 @@ enum ShipmentStatus {
 }
 
 /**
- * An Vegetables asset
+ * Vegetables asset
  */
 asset Vegetables identified by vegetablesId {
     o String vegetablesId

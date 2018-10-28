@@ -23,3 +23,5 @@ query selectShipmentById {
       SELECT org1.trading.Shipment
         WHERE (shipmentId == _$shipmentId)
 }
+
+
