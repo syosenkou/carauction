@@ -3,7 +3,7 @@
     "composer": "^0.19.10"
   },
   "name": "market-network-dx",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "for blockchain team study",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/carauction.bna",
